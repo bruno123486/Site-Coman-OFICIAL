@@ -14,15 +14,26 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px
 }
 
 #fix-conteiner {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(19, 19, 19, 0.85);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 80px;
-    background: transparent;
-    border-bottom: 1px solid #292929;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease,
+                background 0.3s ease;
+}
+
+#fix-conteiner.rolou {
+    border-bottom-color: #292929
 }
 
 .topicos {
@@ -32,6 +43,7 @@ html {
     padding: 5px;
     cursor: pointer;
     letter-spacing: 1px;
+    margin-left: 100px
 }
 
 .topicos a {
@@ -43,25 +55,47 @@ html {
     color: white
 }
 
-.login-btn {
+.agendar-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 10px 20px;
-    background: transparent;
-    border: 1px solid #c0c0c0;
+    background: #D4AF37;
+    border: 1px solid transparent;
     border-radius: 50px;
     cursor: pointer;
-    transition: 0.19s;
+    transition: 0.3s;
     font-size: 14px;
+    box-shadow: 0 0 25px rgba(226, 184, 50, 0.20);
 }
 
-.login-btn a {
-    color: #c0c0c0
+#fix-conteiner.rolou .agendar-btn {
+    padding: 7px 16px;
 }
 
-.login-btn:hover {
-    background: #c0c0c0;
+#fix-conteiner.rolou .agendar-btn i,
+#fix-conteiner.rolou .agendar-btn a {
+    font-size: 11px;
 }
 
-.login-btn:hover a {
+.agendar-btn a {
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.agendar-btn i {
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.agendar-btn:hover {
+    background: #C8A87C;
+    box-shadow: 0 0 35px rgba(226, 184, 50, 0.35);
+}
+
+.agendar-btn:hover a {
     color: #121112
 }
 
@@ -70,6 +104,11 @@ html {
 #fix-conteiner img {
     width: 80px;
     height: auto;
+    transition: width 0.3s ease;
+}
+
+#fix-conteiner.rolou img {
+    width: 55px;
 }
 
 @media (max-width: 800px) {
@@ -415,7 +454,8 @@ html {
     display: flex;
     align-items: center;
     gap: 10px;
-    cursor: pointer
+    cursor: pointer;
+    max-width: fit-content;
 }
 
 .more span {
@@ -566,6 +606,9 @@ html {
 .foto6,
 .foto7,
 .foto8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: #171717;
     max-width: 400px;
     height: 400px;
@@ -597,8 +640,7 @@ html {
 .foto8 .date {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: absolute
+    gap: 5px
 }
 
 .foto1 .date div,
@@ -667,7 +709,6 @@ html {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    top: 280px
 }
 
 .local div {
@@ -689,7 +730,7 @@ html {
 
 .local button {
     visibility: hidden;
-    margin-right: 30px;
+    margin-right: 20px;
     background: white;
     padding: 10px;
     color: black;
@@ -899,6 +940,19 @@ html {
     box-shadow: 0 0 8px rgba(212, 175, 55, 0.3); 
 }
 
+
+.erro {
+    color: #e5645a;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.name input.invalido,
+.social input.invalido,
+.tipoServico select.invalido {
+    border-color: #8a3530;
+}
+
 .feedbackBtn {
     margin-top: 30px;
     display: flex;
@@ -909,12 +963,13 @@ html {
     background: #D4AF37;
     border-radius: 30px;
     cursor: pointer;
-    box-shadow: 0px 0px 15px 0.01px #c0bf6d;
+    box-shadow: 0 0 30px 10px rgba(255, 196, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .feedbackBtn:hover {
     background: #C8A87C;
-    box-shadow: 0px 0px 15px 0.01px #bbba8d;
+    box-shadow: 0 0px 35px rgba(245, 213, 110, 0.35);
 }
 
 .feedbackBtn span {
@@ -942,9 +997,9 @@ html {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 100;
-    font-size: 40px;
+    font-size: 50px;
     letter-spacing: -0.02em;
-    color: grey
+    color: rgb(173, 173, 173)
 }
 
 
@@ -1222,7 +1277,10 @@ html {
 }
 
 .conecteBotoes button {
-    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 11px;
     border-radius: 50%;
     border: 1px solid #272827;
     background: #171717;
