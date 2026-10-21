@@ -42,6 +42,10 @@ const ligacoes = [
     ['.agendar-btn', LINKS.whatsapp + '?text=' + encodeURIComponent('Olá! Gostaria de agendar uma visita técnica.')],
 ];
 
+document.querySelector('.whatsappFixo').addEventListener('click', () => {
+    abrir(LINKS.whatsapp + '?text=' + encodeURIComponent('Olá! Gostaria de saber mais sobre os serviços.'));
+});
+
 ligacoes.forEach(([seletor, url]) => {
     const elemento = document.querySelector(seletor);
     const alvo = elemento.closest('button, a');
@@ -129,3 +133,33 @@ campoTelefone.addEventListener('input', () => {
 
     campoTelefone.value = formatado;
 });
+
+
+const telaErro = document.getElementById('tela-erro');
+
+function mostrarTelaErro(
+    titulo = 'Algo deu errado',
+    texto = 'Não foi possível concluir a ação. Tente novamente em instantes.'
+) {
+    document.getElementById('erro-titulo').textContent = titulo;
+    document.getElementById('erro-texto').textContent = texto;
+    telaErro.classList.add('ativa');
+    document.getElementById('erro-fechar').focus();
+}
+
+function fecharTelaErro() {
+    telaErro.classList.remove('ativa');
+}
+
+document.getElementById('erro-fechar').addEventListener('click', fecharTelaErro);
+
+telaErro.addEventListener('click', (e) => {
+    if (e.target === telaErro) fecharTelaErro();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') fecharTelaErro();
+});
+
+window.addEventListener('error', () => mostrarTelaErro());
+window.addEventListener('unhandledrejection', () => mostrarTelaErro());
