@@ -21,15 +21,19 @@
 <body>
 
 <div id="fix-conteiner">
-    <img src="templates/images/LogoDouradaCerta.png">
-    <div class="topicos">
+    <img src="templates/images/LogoDouradaCerta.png" alt="Coman Patrimonial">
+    <div class="topicos" id="menu-topicos">
         <a href="#conteiner">SERVIÇOS</a>
         <a href="#conteiner2">OBRAS</a>
         <a href="#conteiner3">CONTATO</a>
     </div>
-    <button class="agendar-btn">
+    <button class="agendar-btn" aria-label="Marque uma visita">
         <i class="fa-solid fa-calendar-days"></i>
         <a>MARQUE UMA VISITA</a>
+    </button>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-topicos">
+        <i class="fa-solid fa-bars"></i>
     </button>
 </div>
 
