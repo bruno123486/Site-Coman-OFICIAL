@@ -80,6 +80,11 @@ function limparErro(campo) {
 [campoNome, campoTelefone].forEach(campo => {
     campo.addEventListener('input', () => limparErro(campo));
 });
+
+
+
+
+
 campoServico.addEventListener('change', () => limparErro(campoServico));
 
 document.querySelector('.feedbackBtn').addEventListener('click', () => {
@@ -118,6 +123,11 @@ document.querySelector('.feedbackBtn').addEventListener('click', () => {
 
     abrir(`${LINKS.whatsapp}?text=${encodeURIComponent(texto)}`);
 });
+
+
+
+
+
 
 campoTelefone.addEventListener('input', () => {
     const numeros = campoTelefone.value.replace(/\D/g, '').slice(0, 11);

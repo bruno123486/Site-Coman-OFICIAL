@@ -4,17 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página não encontrada | Comam Patrimonial</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/404.css">
     <link rel="icon" type="image/png" href="/templates/images/LogoDouradaCerta.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="telaErro ativa">
-        <div class="telaErroCaixa">
-            <h2>404</h2>
-            <p>A página que você procura não existe ou foi movida.</p>
-            <button onclick="location.href='/'">VOLTAR AO INÍCIO</button>
+    <div class="telaErro">
+        <div class="erroType">
+            <h1>404</h1>
+            <h3>Página não encontrada</h3>
+        </div>
+
+        <div class="erroDesc">
+            <p>O endereço que você abriu não existe ou foi movido.</p>
+            <span>Volte ao início para continuar navegando.</span>
+        </div>
+
+        <div class="erroButtons">
+            <button class="backInit">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                <span>VOLTAR PARA O INÍCIO</span>
+            </button>
+
+            <button class="goWhatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <p>FALAR NO WHATSAPP</p>
+            </button>
         </div>
     </div>
+<script src="/assets/js/404.js"></script>
 </body>
 </html>

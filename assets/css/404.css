@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+    width: 100%;
+    background: #131313;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+
+
+.telaErro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.erroType {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+    background: transparent
+}
+
+.erroType h1 {
+    font-size: 160px;
+    color: #D4AF37;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.erroType h3 {
+    color: #f3f3f3;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+
+.erroDesc {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px
+}
+
+.erroDesc p {
+    color: grey;
+    font-size: 15px;
+}
+
+.erroDesc span {
+    color: grey;
+    font-size: 15px;
+}
+
+
+.erroButtons {
+    display: flex;
+    gap: 15px;
+    padding: 20px
+}
+
+
+.backInit {
+    display: flex;
+    align-items: center;
+    padding: 18px 30px;
+    gap: 10px;
+    background: #C29B65;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 40px rgba(122, 110, 1, 0.6);
+    transition: 0.2s ease;
+}
+
+.backInit:hover {
+    background: #C8A87C;
+    box-shadow: 0 0 40px rgba(112, 106, 46, 0.6);
+}
+
+.backInit:hover i {
+    transform: rotate(0deg);
+}
+
+
+.backInit i {
+    background: #886C45;
+    border-radius: 50%;
+    padding: 6px;
+    transform: rotate(30deg);
+    transition: 0.1s ease;
+}
+
+.backInit span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+.goWhatsapp {
+    display: flex;
+    align-items: center;
+    padding: 18px 30px;
+    gap: 10px;
+    border-radius: 30px;
+    background: #191919;
+    border: 1px solid #292929;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.goWhatsapp i {
+    color: #AAAAAA;
+    font-size: 18px;
+    transition: 0.2s ease
+}
+
+.goWhatsapp p {
+    color: #AAAAAA;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.goWhatsapp:hover i,
+.goWhatsapp:hover p {
+    color: #f3f3f3
+}
+
+.goWhatsapp:hover {
+    border: 1px solid #A2875C
+}
+
+
